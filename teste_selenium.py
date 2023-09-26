@@ -1,6 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 import streamlit as st
 import urllib
@@ -16,7 +19,12 @@ mensagem = st.text_area("Digite a mensagem:")
 enviar = st.button("Enviar Mensagem")
 
 if enviar:
-    navegador = webdriver.Chrome()
+    def get_driver():
+        return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+    options = Options()
+
+    navegador = get_driver()
     navegador.get("https://web.whatsapp.com")
 
     # esperar a tela do whatsapp carregar
