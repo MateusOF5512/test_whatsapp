@@ -1,6 +1,6 @@
 pip==22.1.2
 selenium==4.10.0
-webdriver-manager==3.4.1
+webdriver-manager==4.0.0
 streamlit==1.20.0
 urllib3==1.26.7
 tqdm==4.62.2
