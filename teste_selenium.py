@@ -41,15 +41,14 @@ if uploaded_file is not None:
         enviar = st.button("Enviar Mensagem")
 
     if enviar:
+        def get_driver():
+                return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
         options = Options()
         options.add_argument('--disable-gpu')
         options.add_argument('--headless')
 
-        def get_driver():
-            return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
-        navegador = get_driver()
+        driver = get_driver()
         navegador.get("https://web.whatsapp.com/")
 
         # Barra de progresso
