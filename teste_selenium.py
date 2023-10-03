@@ -43,6 +43,8 @@ if uploaded_file is not None:
     if enviar:
 
         options = Options()
+        options.add_argument('--disable-gpu')
+        options.add_argument('--headless')
 
         def get_driver():
             return webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
