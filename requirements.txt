@@ -1,6 +1,6 @@
 selenium==3.141.0
 webdriver-manager==3.4.1
-streamlit==0.88.0
+streamlit==1.27.0
 urllib3==1.26.7
 tqdm==4.62.2
 openpyxl==3.0.10
